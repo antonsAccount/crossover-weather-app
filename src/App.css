@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+
 .container {
   display: flex;
   justify-content: center;
@@ -13,7 +27,7 @@
 }
 
 .number {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 select {
@@ -26,6 +40,15 @@ select {
   line-height: 30px;
 }
 
+h1 {
+  color: yellow;
+  margin-top: 30px;
+}
+
+hr {
+  color: rgba(255, 255, 255, 0.499);
+}
+
 svg {
   width: 50px;
   height: 50px;
@@ -36,34 +59,45 @@ svg {
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: center;
 }
 
 .city {
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: center;
 }
 
 .min_max_temp {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+}
+
+.main_temp {
+  font-size: 46px;
 }
 
 .precipitation {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 
 .humidity {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 
 .wind {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
+  margin-bottom: 30px;
 }

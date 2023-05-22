@@ -1,5 +1,5 @@
 import axios from "axios";
-// import Loading from "./components/Loading";
+import Loading from "./components/Loading";
 import { useState, useEffect } from "react";
 import './App.css';
 
@@ -56,6 +56,9 @@ function App() {
   // { !dataApi ? <p>LOADING...</p> :
   return (
     <>
+      {!dataApi ? (
+        <Loading />
+      ) : (
     <div className="container">
       <div className="app">
         <h1>Weather forecast</h1>
@@ -74,29 +77,31 @@ function App() {
         
         <div className="act_temp">
         {currentSvg}
-          <p className="number"> {dataApi[cityIndex]?.daily_average} °C</p>
+          <p className="main_temp"> {dataApi[cityIndex]?.daily_average} °C</p>
         </div>
         <div className="min_max_temp">
-          <p className="number">min {dataApi[cityIndex]?.daily_min} °C</p>
-          <p className="number">max {dataApi[cityIndex]?.daily_max} °C</p>
+          <p>min</p>
+          <p className="number">{dataApi[cityIndex]?.daily_min} °C</p>
+          <p>max</p>
+          <p className="number"> {dataApi[cityIndex]?.daily_max} °C</p>
         </div>
         <div className="precipitation">
           <p>Precipitation</p>
-          <p className="number">{dataApi[cityIndex]?.prec_prob}</p>
-          <p>%</p>
+          <p className="number">{dataApi[cityIndex]?.prec_prob}%</p>
         </div>
+        <hr></hr>
         <div className="humidity">
           <p>Humidity</p>
-          <p className="number">{dataApi[cityIndex]?.humidity}</p>
-          <p>%</p>
+          <p className="number">{dataApi[cityIndex]?.humidity}%</p>
         </div>
+        <hr></hr>
         <div className="wind">
           <p>Wind</p>
-          <p className="number">{dataApi[cityIndex]?.wind}</p>
-          <p>km/h</p>
+          <p className="number">{dataApi[cityIndex]?.wind}km/h</p>
         </div>
       </div>
     </div>
+    )} 
     </>
   )
 }
